@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<title>Task 1</title>
+<head><p align="Center"><b>Task 1</b></p></head>
+<head>
+<style>
+.button {
+    padding: 15px 32px;
+    text-align: center;
+    margin: 4px 2px;
+    font-size: 20px;
+}
+
+</style>
+</head>
+<body>
+
+<p align="Center">
+<button type="button" class="button" onclick="add(1)" value="1">1</button>
+<button type="button" class="button" onclick="add(2)" value="2">2</button>
+<button type="button" class="button" onclick="add(3)" value="3">3</button>
+<button type="button" class="button" onclick="add(4)" value="4">4</button>
+<button type="button" class="button" onclick="add(5)" value="5">5</button>
+</p>
+
+
+<script>
+    var x=0;
+    function add(numval) {
+        var sum;
+        x=x+numval;
+        sum = numval+x;
+        document.getElementById("button").value = x;
+    }
+</script>
+
+<!--
+<button onclick="add()">For Result Click me!</button>
+-->
+<p>Sum=<input id="button"></p>
+
+</body>
+</html>

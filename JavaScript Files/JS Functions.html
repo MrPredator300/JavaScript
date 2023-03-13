@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<title>JS Functions</title>
+<head><p align="Center"><b>JS Functions</b></p></head>
+<body>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+<p id="p1"></p>
+
+<script>
+    function myFunction(p1,p2) {
+        return p1*p2;
+    }
+    document.getElementById("p1").innerHTML ="Multiplying 4*3= " +  myFunction(4,3);
+</script>
+
+<p>This example calls a function which performs a calculation and returns the result:</p>
+<p id="p2"></p>
+
+<script>
+    var x = myFunction(5,3);
+    document.getElementById("p2").innerHTML = x;
+</script>
+
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+<p id="p3"></p>
+
+<script>
+    function toCelsius(f) {
+        return (5/9) * (f-32);
+    }
+    document.getElementById("p3").innerHTML = toCelsius(77);
+</script>
+
+<p>Accessing a function without () will return the function definition instead of the function result:</p>
+<p id="p4"></p>
+
+<script>
+    function toCelsius(f) {
+        return (5/9) * (f-32);
+    }
+    document.getElementById("p4").innerHTML = toCelsius;
+</script>
+
+<h2>Functions Used as Variable Values:-</h2>
+<p id="p5"></p>
+
+<script>
+    document.getElementById("p5").innerHTML = "The Temperature is " + toCelsius(77) + " Celsius";
+
+    function toCelsius(f) {
+        return (5/9)*(f-32);
+    }
+</script>
+
+<h2>Local Variables</h2>
+<p>Outside myFunction() carName is underfined.</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+    myFunction();
+    function myFunction() {
+        let carName = "Volvo";
+        document.getElementById("demo1").innerHTML = typeof carName + " " + carName;
+    }
+
+    document.getElementById("demo2").innerHTML = typeof carName;
+</script>
+
+
+
+
+</body>
+</html>

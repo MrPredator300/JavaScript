@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<title>JS Introduction (JavaScript Can Change HTML Attribute Values)</title>
+<head><p align="Center"><b>JS Introduction (JavaScript Can Change HTML Attribute Values)</b></p></head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+<p>JavaScript can change HTML attribute values.</p>
+<p>In this case JavaScript changes the value of the src (source) attribute of an image.</p>
+
+<button onclick="document.getElementById('myImage').src='pic_bulbon.gif'">Turn on the light </button>
+<img id="myImage" src='pic_bulboff.gif' style="width:100px">
+<button onclick="document.getElementById('myImage').src='pic_bulboff.gif'">Turn off the light </button>
+
+<!--
+NOTE:-
+for the image file src=' ' only use single qutation ('') like this not double the double quotation does not work.!!!
+The "button turn on" and "button turn off" is calling two different images.
+
+give the image file name with extension if the image file is present in the same folder as the code file
+No need to give the full path.
+
+-->
+
+</body>
+</html>

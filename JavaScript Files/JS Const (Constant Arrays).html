@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<title>JS Const (Constant Arrays)</title>
+<head><p align="Center"><b>JS Const (Constant Arrays)</b></p></head>
+<body>
+
+    <p id="d1"></p>
+
+    <script>
+        const cars = ["BMW","volvo","Audi"];
+        cars[0] = "TATA";
+        cars.push("Toyota");
+        document.getElementById("d1").innerHTML = cars;
+    </script>
+
+
+<!--
+const cars = ["Saab", "Volvo", "BMW"];
+cars = ["Toyota", "Volvo", "Audi"];    // ERROR
+-->
+
+</body>
+</html>

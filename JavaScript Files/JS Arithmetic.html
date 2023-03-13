@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<title>JS Arithmetic</title>
+<head><p align="Center"><b>JS Arithmetic</b></p></head>
+<body>
+
+<h2>JavaScript Arithmetic</h2>
+<p>A typical arithmetic operation takes two numbers and produces a new number.</p>
+<h3>The two numbers can be literals:</h3>
+<p id="d1"></p>
+
+<script>
+    let x = 100 + 50;
+    document.getElementById("d1").innerHTML = x;
+</script>
+
+<h3>The two numbers can be variables:</h3>
+<p id="d2"></p>
+
+<script>
+    let a = 100;
+    let b = 50;
+    let c = a + b;
+    document.getElementById("d2").innerHTML = c;
+</script>
+
+<h3>The two numbers can be expressions:</h3>
+<p id="d3"></p>
+
+<script>
+    let a3 = 3;
+    let b3 = (100+50)*a3;
+    document.getElementById('d3').innerHTML = b3;
+</script>
+
+<hr>
+
+<h3>1.Adding</h3>
+<p id="p1"></p>
+
+<script>
+    let x1 = 5;
+    let y1 = 2;
+    let z1 = x1 + y1;
+    document.getElementById("p1").innerHTML = z1;
+</script>
+
+<h3>2.Subtracting</h3>
+<p id="p2"></p>
+
+<script>
+    let x2 = 5;
+    let y2 = 2;
+    let z2 = x2-y2;
+    document.getElementById("p2").innerHTML = z2;
+</script>
+
+<h3>3.Multiplying</h3>
+<p id="p3"></p>
+
+<script>
+    let x3 = 5;
+    let y3 = 2;
+    let z3 = x3*y3;
+    document.getElementById("p3").innerHTML = z3;
+</script>
+
+<h3>4.Dividing</h3>
+<p id="p4"></p>
+
+<script>
+    let x4=5;
+    let y4=2;
+    let z4=x4/y4;
+    document.getElementById("p4").innerHTML = z4;
+</script>
+
+<h3>5.Remainder</h3>
+<p id="p5"></p>
+
+<script>
+    let x5=5;
+    let y5=2;
+    let z5=x5%y5;
+    document.getElementById("p5").innerHTML = z5;
+</script>
+
+<h3>6.Incrementing</h3>
+<p id="p6"></p>
+
+<script>
+    let x6=5;
+    x6++;
+    let z6=x6;
+    document.getElementById("p6").innerHTML = z6;
+</script>
+
+<h3>7.Decrementing</h3>
+<p id="p7"></p>
+
+<script>
+    let x7=5;
+    x7--;
+    let z7=x7;
+    document.getElementById("p7").innerHTML = z7;
+</script>
+
+<h3>8.Exponentiation</h3>
+<p id="p8"></p>
+
+<script>
+    let x8=5;
+    let z8= x8**2;
+    document.getElementById("p8").innerHTML = z8;
+</script>
+
+<h3>OR</h3>
+<p>Math.pow()</p>
+
+<script>
+    let x81 = 5;
+    document.getElementById("p8").innerHTML = Math.pow(x81,2);
+</script>
+
+<h3>9.Operator Precedence</h3>
+<p id="p9"></p>
+
+<script>
+    let x9=100 + 50 * 3;
+    document.getElementById("p9").innerHTML = x9;
+</script>
+
+</body>
+</html>

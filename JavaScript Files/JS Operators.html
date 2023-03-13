@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<title>JS Operators</title>
+<head><p align="Center"><b>JS Operators</b></p></head>
+<body>
+<h1>JavaScript Operators</h1>
+
+
+<h2>The Assignment ('=') Operator:-</h2>
+<p id="d1"></p>
+
+<h2>The Addition Operator:-</h2>
+<p id="d2"></p>
+
+<h2>The Multiplication Operator:-</h2>
+<p id="d3"></p>
+
+<script>
+    let x1 = 10;
+    document.getElementById("d1").innerHTML = x1;
+</script>
+
+<script>
+    let x2 = 5;
+    let y2 = 2;
+    let z2 = x2+y2;
+    document.getElementById("d2").innerHTML = "The sum of x + y is:" + z2;
+</script>
+
+<script>
+    let x3 = 5;
+    let y3 = 2;
+    let z3 = x3*y3;
+    document.getElementById("d3").innerHTML = "The product of x * y is:" + z3;
+</script>
+
+<!--
+Types of JavaScript Operators
+There are different types of JavaScript operators:
+
+Arithmetic Operators
+Assignment Operators
+Comparison Operators
+Logical Operators
+Conditional Operators
+Type Operators
+
+-->
+
+<h2>JS Arithmetic Operator:-</h2>
+<p id="d4"></p>
+
+<script>
+    let a4 = 3;                  //Arithmetic Operators are used to perform arithmetic on numbers:
+    let x4 = (100+50)*a4;
+    document.getElementById("d4").innerHTML = x4;
+</script>
+
+<h2>JS Assignment Operators (+=):-</h2>
+<p id="d5"></p>
+
+<script>
+    let x5=10;
+    x5 += 5;
+    document.getElementById("d5").innerHTML = x5;
+</script>
+
+<h2>Adding JavaScript Strings:-</h2>
+<p id="d6"></p>
+
+<script>
+    let text1 = "Percy";
+    let text2 = "Jackson";
+    let text3 = text1 + " " + text2;
+    document.getElementById("d6").innerHTML = text3;
+</script>
+
+<h2>Adding JavaScript Strings (Concatenate Strings):-</h2>
+<p id="d7"></p>
+
+<script>
+    let t1 = "What a nice day ";
+    let t2 = "to go for a swim";
+    let t3 = t1 + t2;
+    document.getElementById("d7").innerHTML = t3;
+</script>
+
+<!--
+When used on strings, the + operator is called the concatenation operator.    
+-->
+
+<h2>Adding JavaScript Strings and Numbers:-</h2>
+<p id="d8"></p>
+
+<script>
+    let s1 = 5 + 5;
+    let s2 = "5" + 5;
+    let s3 = "Hello" + 5;
+    document.getElementById("d8").innerHTML = s1 + "<br>" + s2 + "<br>" + s3;
+</script>
+
+
+
+</body>
+</html>

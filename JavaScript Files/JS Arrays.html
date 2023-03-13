@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<title>JS Arrays</title>
+<head><p align="Center"><b>JS Arrays</b></p></head>
+<body>
+
+<h2>JavaScript Arrays:-</h2>
+<p id="p1"></p>
+
+<script>
+    const car1 = ["Saab","Volvo","BMW"];
+    document.getElementById("p1").innerHTML = car1;
+</script>
+
+<hr>
+
+<h2>Creating an Array:-</h2>
+<p>Using an array literal is the easiest way to create a JavaScript Array.</p>
+<!--
+Syntax:
+const array_name = [item1, item2, ...];      
+It is a common practice to declare arrays with the const keyword.
+-->
+
+<p id="p2"></p>
+
+<script>
+    const car2 = ["Saab","Volvo","BMW"];
+    document.getElementById("p2").innerHTML = car2;
+</script>
+
+<p>Test Case 2:Spaces and line breaks are not important. A declaration can span multiple lines:</p>
+<p id="p2.2"></p>
+
+<script>
+    const car22 = [
+        "Saab",
+        "Audi",
+        "BMW"
+    ];
+    document.getElementById("p2.2").innerHTML = car22;
+</script>
+
+<p>Test Case 3:You can also create an array, and then provide the elements:</p>
+<p id="p2.3"></p>
+
+<script>
+    const car23 = [];
+    car23[0] = "Saab";
+    car23[1] = "Volvo";
+    car23[2] = "Audi";
+    document.getElementById("p2.3").innerHTML = car23;
+</script>
+
+<hr>
+
+<h2>Using the JavaScript Keyword new</h2>
+<p id="p3"></p>
+
+<script>
+    const car3 = new Array("Saab","Volvo","BMW");
+    document.getElementById("p3").innerHTML = car3;
+</script>
+
+<!--
+Note:-
+The two examples above do exactly the same.
+There is no need to use new Array().
+For simplicity, readability and execution speed, use the array literal method.
+-->
+
+<hr>
+
+<h2>Accessing Array Elements</h2>
+<p>You access an array element by referring to the index number:</p>
+<p id="p4"></p>
+
+<script>
+    const cars4 = ["Saab","Volvo","BMW"];
+    let car4 = cars4[0];
+    document.getElementById("p4").innerHTML = car4;
+</script>
+
+<!--
+Note: Array indexes start with 0.
+[0] is the first element. [1] is the second element.
+-->
+
+<hr>
+
+<h2>Changing an Array Element</h2>
+<p>This statement changes the value of the first element in cars:</p>
+<p id="p5"></p>
+
+<script>
+    const cars5 = ["Saab","Volvo","BMW"];
+    cars5[0] = "Ferrari";
+    document.getElementById("p5").innerHTML = cars5;
+</script>
+
+<hr>
+
+<h2>Access the Full Array</h2>
+<p>With JavaScript, the full array can be accessed by referring to the array name:</p>
+<p id="p6"></p>
+
+<script>
+    const cars6 = ["Saab","Volvo","BMW"];
+    document.getElementById("p6").innerHTML = cars6;
+</script>
+
+<hr>
+
+<h2>Arrays are Objects</h2>
+<!--
+Arrays are a special type of objects. The typeof operator in JavaScript returns "object" for arrays.
+But, JavaScript arrays are best described as arrays.
+Arrays use numbers to access its "elements". In this example, person[0] returns John:
+-->
+
+<p id="p7"></p>
+<p id="p7.2"></p>
+<p id="p7.3"></p>
+
+<script>
+    const person7 = ["John","Doe",46];
+    document.getElementById("p7").innerHTML = person7[0];
+    document.getElementById("p7.2").innerHTML = person7[1];
+    document.getElementById("p7.3").innerHTML = person7[2];
+</script>
+
+<p>Objects use names to access its "members". In this example, person.firstName returns John:</p>
+<p id="p7.4"></p>
+<p id="p7.4.2"></p>
+<p id="p7.4.3"></p>
+
+<script>
+    const person74 = {fname:"Jack",lname:"Jones",age:46};
+    document.getElementById("p7.4").innerHTML = person74.fname;
+    document.getElementById("p7.4.2").innerHTML = person74.lname;
+    document.getElementById("p7.4.3").innerHTML = person74.age;
+</script>
+
+<hr>
+
+<h2>The length Property</h2>
+<p>The length property of an array returns the length of an array (the number of array elements).</p>
+<p id="p8"></p>
+<p id="p8.2"></p>
+
+<script>
+    const fruits = ["Banana","Orange","Apple","Mango"];
+    let length = fruits.length;
+    document.getElementById("p8.2").innerHTML = fruits;
+    document.getElementById("p8").innerHTML = length;
+</script>
+
+<!--
+Note:The length property is always one more than the highest array index.
+-->
+
+<hr>
+
+<h2>Accessing the First Array Element</h2>
+<p id="p9"></p>
+<p id="p9.2"></p>
+<p id="p9.3"></p>
+<p id="p9.4"></p>
+
+<script>
+    const fruits9 = ["Banana","Orange","Apple","Mango"];
+    let fruits92 = fruits9[0];
+    document.getElementById("p9").innerHTML = fruits92;
+    document.getElementById("p9.2").innerHTML = fruits9[1];
+    document.getElementById("p9.3").innerHTML = fruits9[2];
+    document.getElementById("p9.4").innerHTML = fruits9[3];
+</script>
+
+<hr>
+
+<h2>Accessing the Last Array Element</h2>
+<p id="p10"></p>
+<p id="p10.2"></p>
+<p id="p10.3"></p>
+<p id="p10.4"></p>
+
+<script>
+    const fruits10 = ["Banana", "Orange", "Apple", "Mango"];
+    document.getElementById("p10").innerHTML = fruits10[fruits.length-1];
+    document.getElementById("p10.2").innerHTML = fruits10[fruits.length-2];
+    document.getElementById("p10.3").innerHTML = fruits10[fruits.length-3];
+    document.getElementById("p10.4").innerHTML = fruits10[fruits.length-4];
+</script>
+
+<hr>
+
+<h2>Looping Array Elements</h2>
+<p>One way to loop through an array, is using a for loop:</p>
+<p id="p11"></p>
+
+<script>
+    const fruits11 = ["Banana", "Orange", "Apple", "Mango"];
+    let fLen = fruits11.length;
+
+    let text = "<ul>";
+    for(let i=0;i<fLen;i++) {
+        text += "<li>" + fruits[i] + "</li>";
+    }
+    text += "</ul>";
+    document.getElementById("p11").innerHTML = text;
+</script>
+
+<p>Test Case 2:You can also use the Array.forEach() function:</p>
+<p id="p11.2"></p>
+
+<script>
+    const fruits112 = ["Banana", "Orange", "Apple", "Mango"];
+    let text112 = "<ul>";
+    fruits112.forEach(myFunction);
+    text112 += "</ul>";
+    document.getElementById("p11.2").innerHTML = text112;
+    function myFunction(value) {
+        text112 +="<li>" + value + "</li>";
+    }
+</script>
+
+<hr>
+
+<h2>Adding Array Elements</h2>
+<p>The easiest way to add a new element to an array is using the push() method:</p>
+<p id="p12"></p>
+
+<script>
+    const fruits12 = ["Banana", "Orange", "Apple"];
+    fruits12.push("Lemon");
+    document.getElementById("p12").innerHTML = fruits12;
+</script>
+
+<p>Test Case 2:New element can also be added to an array using the length property:</p>
+<p id="p12.2"></p>
+
+<script>
+    const fruits122 = ["Banana", "Orange", "Apple"];
+    fruits112[fruits112.length] = "Lemon";
+    document.getElementById("p12.2").innerHTML = fruits112;
+</script>
+
+<hr>
+
+<h2>Associative Arrays</h2>
+<!--
+Many programming languages support arrays with named indexes.
+Arrays with named indexes are called associative arrays (or hashes).
+JavaScript does not support arrays with named indexes.
+In JavaScript, arrays always use numbered indexes.  
+-->
+
+<p id="p13"></p>
+
+<script>
+    const person13 = [];
+    person13[0] = "Jack";
+    person13[1] = "Jones";
+    person13[2] = 45;
+    document.getElementById("p13").innerHTML = person13.length + "<br>" + person13[0];
+</script>
+
+<b>WARNING !! <br>
+If you use named indexes, JavaScript will redefine the array to an object. <br>
+After that, some array methods and properties will produce incorrect results.</b>
+
+<p id="p13.2"></p>
+
+<script>
+    const person132 = [];
+    person132["fname"] = "Jack";
+    person132["lname"] = "Jones";
+    person132["age"] = 57;
+    document.getElementById("p13.2").innerHTML = person132.length + "<br>" + person132[0];
+</script>
+
+<hr>
+
+<h2>JavaScript new Array()</h2>
+<!--
+JavaScript has a built-in array constructor new Array().
+But you can safely use [] instead.    
+-->
+
+<p>These two different statements both create a new array containing 6 numbers:</p>
+<p id="p14"></p>
+
+<script>
+    //const points = new Array(40, 100, 1, 5, 25, 10); This also works but avoid using it
+    const points14 = [40,100,1,5,25,10];
+    document.getElementById("p14").innerHTML = points14;
+</script>
+
+<p>The new keyword can produce some unexpected results:</p>
+<p id="p14.2"></p>
+
+<script>
+    const points142 = new Array(40,100,1);
+    document.getElementById("p14.2").innerHTML = points142;
+</script>
+
+<p>Create an Array with one element.</p>
+<p id="p14.3"></p>
+
+<script>
+    var points143 = [40];
+    document.getElementById("p14.3").innerHTML = points143;
+</script>
+
+<p>Avoid using new Array(). (ERROR!! it will display) </p>
+<p id="p14.4"></p>
+
+<script>
+    var points144 = new Array(40);
+    document.getElementById("p14.4").innerHTML = points144[0];
+</script>
+
+<hr>
+
+<h2>How to Recognize an Array</h2>
+<!--
+A common question is: How do I know if a variable is an array?
+The problem is that the JavaScript operator typeof returns "object":
+-->
+<p id="p15"></p>
+<p id="p15.2"></p>
+
+<script>
+    const fruits15 = ["Banana", "Orange", "Apple"];
+    let type = typeof fruits15;
+    document.getElementById("p15").innerHTML = type;
+    document.getElementById("p15.2").innerHTML = typeof fruits15;
+</script>
+
+<p>Solution 1:To solve this problem ECMAScript 5 (JavaScript 2009) defined a new method Array.isArray():</p>
+<p id="p15.3"></p>
+
+<script>
+    const fruits153 = ["Banana", "Orange", "Apple"];
+    document.getElementById("p15.3").innerHTML = Array.isArray(fruits153);
+</script>
+
+<p>Solution 2:The <b>instanceof </b>operator returns true if an object is created by a given constructor:</p>
+<p id="p15.4"></p>
+<p id="p15.4.2"></p>
+
+<script>
+    var fruits154 = ["Banana", "Orange", "Apple"];
+    document.getElementById("p15.4").innerHTML = fruits154 instanceof Array;
+    document.getElementById("p15.4.2").innerHTML = fruits154;
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<title>JS String Templates</title>
+<head><p align="Center"><b>JS String Templates</b></p></head>
+<body>
+
+<!--
+Synonyms:
+Template Literals
+Template Strings
+String Templates
+Back-Tics Syntax
+-->
+
+<h2>Back-Tics Syntax</h2>
+<p>Template Literals use back-ticks (``) rather than the quotes ("") to define a string:</p>
+<p id="p1"></p>
+
+<script>
+    let text1 = `Hello World!`;
+    document.getElementById("p1").innerHTML = text1;
+</script>
+
+<hr>
+
+<h2>Quotes Inside Strings</h2>
+<p>With template literals, you can use both single and double quotes inside a string:</p>
+<p id="p2"></p>
+
+<script>
+    let text2 = `He's often called "Johnny"`;
+    document.getElementById("p2").innerHTML = text2;
+</script>
+
+<hr>
+
+<h2>Multiline Strings</h2>
+<p>Template literals allows multiline strings:</p>
+<p id="p3"></p>
+
+<script>
+    let text3 = 
+`The quick
+brown fox
+jumps over
+the lazy dog`;
+    document.getElementById("p3").innerHTML = text3;
+</script>
+
+<hr>
+
+<!--
+Interpolation
+Template literals provide an easy way to interpolate variables and expressions into strings.
+The method is called string interpolation.
+The syntax is:
+${...}
+-->
+
+<h2>Variable Substitutions</h2>
+<p>Template literals allow variables in strings:</p>
+<p id="p4"></p>
+
+<script>
+    let fname = "John";
+    let lname = "Doe";
+    let text4 = `Welcome ${fname}, ${lname}`;
+    document.getElementById("p4").innerHTML = text4; 
+</script>
+
+<!--
+NOTE:Automatic replacing of variables with real values is called string interpolation.
+-->
+
+<hr>
+
+<h2>Expression Substitution</h2>
+<p>Template literals allow expressions in strings:</p>
+<p id="p5"></p>
+
+<script>
+    let price = 10;
+    let VAT = 0.25;
+    let total = `Total: ${(price * (1 + VAT)).toFixed(2)}`;
+    document.getElementById("p5").innerHTML = total;
+</script>
+
+<hr>
+
+<h2>HTML Templates</h2>
+<p id="p6"></p>
+
+<script>
+    let header = "Templates Literals";
+    let tags = ["template literals", "javascript", "es6"];
+    let html = `<h2>${header}</h2><ul>`;
+    for(const x of tags) {
+        html += `<li>${x}</li>`;
+    }
+    html += `</ul>`;
+    document.getElementById("p6").innerHTML = html;
+</script>
+
+
+
+</body>
+</html>

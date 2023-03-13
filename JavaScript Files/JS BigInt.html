@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<title>JavaScript BigInt</title>
+<head><p align="Center"><b>JavaScript BigInt</b></p></head>
+<body>
+<p>JavaScript BigInt variables are used to store big integer values that are too big to be represented by a normal JavaScript Number.</p>
+
+<h2>JavaScript Integer Accuracy</h2>
+<p>JavaScript integers are only accurate up to 15 digits:</p>
+
+<p id="p1"></p>
+<p id="p1.2"></p>
+
+<script>
+    let x1 = 999999999999999;
+    let y1 = 9999999999999999;
+    document.getElementById("p1").innerHTML = x1;
+    document.getElementById("p1.2").innerHTML = y1;
+</script>
+
+<hr>
+
+<h2>How to Create a BigInt</h2>
+<p>To create a BigInt, append n to the end of an integer or call BigInt():</p>
+
+<p id="p2"></p>
+<p id="p2.2"></p>
+
+<script>
+    let x2 = 1234567890123456789012345n;
+    let y2 = BigInt(1234567890123456789012345);
+    document.getElementById("p2").innerHTML = x2;
+    document.getElementById("p2.2").innerHTML = y2;
+</script>
+
+<hr>
+
+<h2>BigInt: A new JavaScript Datatype</h2>
+
+<p id="p3"></p>
+
+<script>
+    let x3 = BigInt(999999999999999);
+    document.getElementById("p3").innerHTML = typeof x3;;
+</script>
+
+<!--
+BigInt is the second numeric data type in JavaScript (after Number).
+With BigInt the total number of supported data types in JavaScript is 8:
+
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+-->
+
+<hr>
+
+<h2>BigInt Operators</h2>
+
+<p id="p4"></p>
+
+<script>
+    let x4 = 9007199254740995n;
+    let y4 = 9007199254740995n;
+    let z4 = x4*y4;
+    document.getElementById("p4").innerHTML = z4;
+</script>
+
+
+<!--
+Notes:-
+Arithmetic between a BigInt and a Number is not allowed (type conversion lose information).
+Unsigned right shift (>>>) can not be done on a BigInt (it does not have a fixed width).
+-->
+
+<hr>
+
+<h2>BigInt Decimals</h2>
+<p id="p5"></p>
+<p id="p5.2"></p>
+
+<script>
+    let x51 = 5n;
+    let y51 = x51 / 2;
+    document.getElementById("p5").innerHTML = y51;
+    // Error: Cannot mix BigInt and other types, use explicit conversion.
+</script>
+
+
+<script>
+    let x5 = 5n;
+    let y5 = Number(x5)/2;
+    document.getElementById("p5.2").innerHTML = y5;
+</script>
+
+<hr>
+
+<h2>BigInt Hex, Octal and Binary</h2>
+<p id="p6"></p>
+
+<script>
+    let hex = 0x20000000000003n;
+    let oct = 0o400000000000000003n
+    let bin = 0b100000000000000000000000000000000000000000000000000011n;
+    document.getElementById("p6").innerHTML = hex + "<br>" + oct + "<br>" + bin;
+</script>
+
+<hr>
+
+<h2>Precision Curiosity</h2>
+<p>Rounding can compromise program security:</p>
+<p>Is 9007199254740992 equal to 9007199254740993?</p>
+<p id="p7"></p>
+
+<script>
+    let x = 9007199254740992 === 9007199254740993;
+    document.getElementById("p7").innerHTML = x;
+</script>
+
+<hr>
+
+<h2>Minimum and Maximum Safe Integers</h2>
+<!--
+MAX_SAFE_INTEGER
+MIN_SAFE_INTEGER
+-->
+
+<h3>MAX_SAFE_INTEGER</h3>
+<p id="p8"></p>
+
+<script>
+    let x8 = Number.MAX_SAFE_INTEGER;
+    document.getElementById("p8").innerHTML = x8;
+</script>
+
+<h3>MIN_SAFE_INTEGER</h3>
+<p id="p8.2"></p>
+
+<script>
+    let x82 = Number.MIN_SAFE_INTEGER;
+    document.getElementById("p8.2").innerHTML = x82;
+</script>
+
+<hr>
+
+<h2>New Number Methods</h2>
+<!--
+Number.isInteger()
+Number.isSafeInteger()
+-->
+
+<h3>The Number.isInteger() Method</h3>
+<p>The isInteger() method returns true if the argument is an integer.</p>
+<p>Otherwise it returns false.</p>
+
+<p id="p9"></p>
+
+<script>
+    document.getElementById("p9").innerHTML = Number.isInteger(10) + "<br>" + Number.isInteger(10.5);
+</script>
+
+<h3>The Number.isSafeInteger() Method</h3>
+<p>A safe integer is an integer that can be exactly represented as a double precision number.</p>
+<p>The Number.isSafeInteger() method returns true if the argument is a safe integer.</p>
+
+<p id="p9.2"></p>
+
+<script>
+    document.getElementById("p9.2").innerHTML = Number.isSafeInteger(10) + "<br>" + Number.isSafeInteger(12345678901234567890);
+</script>
+
+</body>
+</html>

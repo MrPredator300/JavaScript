@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+<title>JS Strings Methods</title>
+<head><p align="Center"><b>JS Strings Methods</b></p></head>
+<body>
+
+<h2>JavaScript String Length:-</h2>
+
+<p id="p1"></p>
+<script>
+    let text = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.getElementById("p1").innerHTML = text.length;
+</script>
+
+<hr>
+
+<h2>JavaScript String slice()</h2>
+
+<p id="p2"></p>
+<script>
+    let text1 = "Apple,Banana,Kiwi";
+    let part = text.slice(7,13);
+    document.getElementById("p2").innerHTML = part;
+</script>
+
+<!--
+Note
+JavaScript counts positions from zero.
+First position is 0.
+Second position is 1.
+-->
+
+<p id="p2.2"></p>
+<script>
+    let text3 = "Apple, Banana, Kiwi";
+    let part3 = text3.slice(7);
+    document.getElementById("p2.2").innerHTML = part3;
+</script>
+
+<p id="p2.3"></p>
+<script>
+    let text4 = "Apple, Banana, Kiwi";
+    let part4 = text4.slice(-11);
+    document.getElementById("p2.3").innerHTML = part4;
+</script>
+
+<p id="p2.4"></p>
+<script>
+    let text5 = "Apple,Banana,Mango";
+    let part5 = text5.slice(-12,-6);
+    documnet.getElementById("p2.4").innerHTML = part5;
+</script>
+
+<hr>
+
+<h2>JavaScript String substring()</h2>
+<p id="p3"></p>
+
+<script>
+    let str = "Apple, Banana, Mango";
+    let part6 = str.substring(7,14);
+    document.getElementById("p3").innerHTML = part6;
+</script>
+
+<hr>    
+
+<h2>JavaScript String substr()</h2>
+<p id="p4"></p>
+<p id="p4.2"></p>
+
+<script>
+    let str4 = "Apple, Banana, Kiwi";
+    let part7 = str.substr(7,6);
+    document.getElementById("p4").innerHTML = part7;
+</script>
+
+<script>
+    let str42 = "Apple, Banana, Kiwi";
+    let part42 = str.substr(7);
+    document.getElementById("p4.2").innerHTML = part42;
+</script>
+
+<hr>
+
+<h2>Replacing String Content:-</h2>
+<p id="p5"></p>
+
+<script>
+    let text6 = "Please visit Microsoft!";
+    let newtext6 = text6.replace("Microsoft","Apple");
+    document.getElementById("p5").innerHTML = newtext6;
+</script>
+
+<!--
+Note
+The replace() method does not change the string it is called on.
+The replace() method returns a new string.
+The replace() method replaces only the first match
+If you want to replace all matches, use a regular expression with the /g flag set. See examples below.
+-->
+
+<p>Replace "Microsoft" with "W3Schools" in the paragraph below:</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="p5.2">Please visit Microsoft and Microsoft !</p>
+
+<script>
+function myFunction() {
+ let text61 = document.getElementById("p5.2").innerHTML;
+ document.getElementById("p5.2").innerHTML = text61.replace("Microsoft","W3schools");
+}
+</script>
+
+<!--
+Note:Regular expressions are written without quotes.
+-->
+
+<p><b>To replace all matches, use a regular expression with a /g flag (global match):</b></p>
+<button onclick="myFunction2()">Try it</button>
+<p id="p6">Please visit Microsoft and Microsoft !</p>
+
+<!--
+In a single click it will replace all the words of Microsot to W3Schools
+-->
+
+<script>
+function myFunction2() {
+    let text7 = document.getElementById("p6").innerHTML;
+    document.getElementById("p6").innerHTML = text7.replace(/Microsoft/g,"W3Schools");
+}
+</script>
+
+<hr>
+
+<h2>JavaScript String ReplaceAll():-</h2>
+
+<p id="p7"></p>
+<script>
+    let text7 = "I love cats. Cats are very easy to love. Cats are very popular.";
+    text7 = text7.replaceAll("Cats","Dogs");
+    text7 = text7.replaceAll("cats","dogs");
+    document.getElementById("p7").innerHTML = text7;
+</script>
+
+<hr>
+
+<h2>JavaScript String Padding</h2>
+<h3>JavaScript String padStart():-</h3>
+<p id="p8"></p>
+
+
+<script>
+    let text8 = "5";
+    document.getElementById("p8").innerHTML = text8.padStart(4,"x");
+</script>
+
+<p id="p8.2"></p>
+
+<script>
+    let text81 = 5;
+    let Padding = text81.padStart(4,"0");
+    document.getElementById("p8.2").innerHTML = text81;
+</script>
+
+<!--
+Note
+The padStart() method is a string method.
+To pad a number, convert the number to a string first.
+-->
+
+<h3>JavaScript String Methods</h3>
+<p>The padStart() method pads a String with another string:-</p>
+<p id="p8.3"></p>
+
+<script>
+    let numb = 5;
+    let text9 = numb.toString();
+    let padded = text9.padStart(4,"0");
+    document.getElementById("p8.3").innerHTML = padded;
+</script>
+
+<h3>JavaScript padEnd():-</h3>
+
+<p id="p9"></p>
+
+<script>
+    let text10 = "5";
+    let padded10 = text10.padEnd(4,"x");
+    document.getElementById("p9").innerHTML = padded10;
+</script>
+
+<!--
+Note
+The padEnd() method is a string method.
+To pad a number, convert the number to a string first.
+-->
+
+<p id="p9.2"></p>
+
+<script>
+    let numb9 = 5;
+    let text91 = numb9.toString();
+    let padded91 = text91.padEnd(4,"0");
+    document.getElementById("p9.2").innerHTML = padded91;
+</script>
+
+<hr>
+
+<h2>JavaScript String charAt():-</h2>
+
+<p id="p10.1"></p>
+<p id="p10"></p>
+
+<script>
+    let text11 = "HELLO WORLD";
+    let char = text11.charAt(0);
+    document.getElementById("p10.1").innerHTML = text11;
+    document.getElementById("p10").innerHTML = char;
+</script>
+
+<h3>JavaScript String charCodeAt()</h3>
+
+<p id="p11"></p>
+
+<script>
+    let text12 = "HELLO WORLD";
+    document.getElementById("p11").innerHTML = text12.charCodeAt(0);    //Gives the ASCII Value of the letter
+</script>
+
+<hr>
+
+<h2>Property Access:-</h2>
+
+<p id="p12"></p>
+<p id="p12.1"></p>
+<p id="p12.2"></p>
+<p id="p12.3"></p>
+<p id="p12.4"></p>
+<p id="p12.5"></p>
+
+<script>
+    var str12 = "HELLO WORLD";
+    document.getElementById("p12").innerHTML = str12;
+    document.getElementById("p12.1").innerHTML = str12[0];
+    document.getElementById("p12.2").innerHTML = str12[1];
+    document.getElementById("p12.3").innerHTML = str12[2];
+    document.getElementById("p12.4").innerHTML = str12[3];
+    document.getElementById("p12.5").innerHTML = str12[4];
+</script>
+
+<!--
+Note
+Property access might be a little unpredictable:
+
+It makes strings look like arrays (but they are not)
+If no character is found, [ ] returns undefined, while charAt() returns an empty string.
+It is read only. str[0] = "A" gives no error (but does not work!)
+-->
+
+<h3>Test case 2:- (Gives no error but does not work)</h3>
+
+<p id="p12.6"></p>
+
+<script>
+    let text13 = "HELLO WORLD";
+    text13[0] = "A"; // Gives no error, but does not work
+    document.getElementById("p12.6").innerHTML = text13;
+</script>
+
+<hr>
+
+<h2>Converting a String to an Array:-</h2>
+<!--
+If you want to work with a string as an array, you can convert it to an array.
+
+A string can be converted to an array with the split() method:
+-->
+<h3>JavaScript String split()</h3>
+
+<p id="p13"></p>
+<script>
+    let text14 = "a,b,c,d,e,f";
+    const myarr = text14.split(",");
+    document.getElementById("p13").innerHTML = myarr[0];
+</script>
+
+
+<p id="p13.2"></p>
+<script>
+    let text141 = "Hello";
+    const myarr2 = text141.split("");
+
+    text141 = "";
+    for(let i=0;i<myarr2.length;i++) {
+        text141 += myarr2[i] + "<br>"
+    }
+    document.getElementById("p13.2").innerHTML = text141;
+</script>
+
+</body>
+</html>

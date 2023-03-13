@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<title>JS String Search</title>
+<head><p align="Center"><b>JS String Search</b></p></head>
+<body>
+<!--
+JavaScript Search Methods
+String indexOf()
+String lastIndexOf()
+String search()
+String match()
+String matchAll()
+String includes()
+String startsWith()
+String endsWith()
+-->
+
+<h2>JavaScript String indexOf():-</h2>
+
+<p id="p1"></p>
+<script>
+    let str = "Please locate where 'locate' occurs!";
+    document.getElementById("p1").innerHTML = str.indexOf("locate");
+</script>
+
+<hr>
+
+<h2>JavaScript String lastIndexOf():-</h2>
+
+<p id="p2"></p>
+<script>
+    let text2 =  "Please locate where 'locate' occurs!";
+    document.getElementById("p2").innerHTML = text2.lastIndexOf("locate")
+</script>
+
+
+
+<h3>Test case 2:- (when the word is not found!)</h3>
+<p id="p2.2"></p>
+<p>
+Both indexOf(), and lastIndexOf() return -1 if the text is not found:
+</p>    
+
+<script>
+    let text22 = "Please locate where 'locate' occurs!";
+    document.getElementById("p2.2").innerHTML = text22.lastIndexOf("Jack");
+</script>
+
+
+<h3>Test case 3:-</h3>
+<p id="p2.3"></p>
+
+<p>
+Both methods accept a second parameter as the starting position for the search:
+</p>    
+
+<script>
+    let text3 = "Please locate where 'locate' occurs!";
+    document.getElementById("p2.3").innerHTML = text3.indexOf("locate",15);
+</script>
+
+<hr>
+
+<h2>JavaScript String search()</h2>
+
+<p>The search() method searches a string for a string (or a regular expression) and returns the position of the match:</p>
+
+<p id="p3"></p>
+
+<script>
+    let str2 = "Please locate where 'locate' occurs!";
+    document.getElementById("p3").innerHTML = str2.search("locate");
+</script>
+
+<h3>Test case 2:- (/locate/)</h3>
+
+<p id="p3.2"></p>
+
+<script>
+    let str22 = "Please locate where 'locate' occurs!";
+    document.getElementById("p3.2").innerHTML = str22.search(/locate/);
+</script>
+
+<hr>
+
+<h2>JavaScript String match()</h2>
+<p>The match() method returns an array containing the results of matching a string against a string (or a regular expression).</p>
+
+<p>Test case 1:Perform a search for "ain":</p>
+<p id="p4"></p>
+
+<script>
+    let text4 = "The rain in SPAIN stays mainly in the plain";
+    const myarr4 = text4.match("ain");
+    document.getElementById("p4").innerHTML = myarr4.length + " " + myarr4;
+</script>
+
+<p>Test case 2:Perform a search for "ain":</p>
+<p id="p4.2"></p>
+
+<script>
+    let text41 = "The rain in SPAIN stays mainly in the plain";
+    const myarr41 = text41.match(/ain/);
+    document.getElementById("p4.2").innerHTML = myarr41.length + " " + myarr41; 
+</script>
+
+<p>Test Case 3:Perform a global search for "ain":</p>
+<p id="p4.3"></p>
+
+<script>
+    let text42 = "The rain in SPAIN stays mainly in the plain";
+    const myarr42 = text42.match(/ain/g);
+    document.getElementById("p4.3").innerHTML = myarr42.length + " " + myarr42;
+</script>
+
+<p>Test case 4:Perform a global, case-insensitive search for "ain":</p>
+<p id="p4.4"></p>
+
+<script>
+    let text44 = "The rain in SPAIN stays mainly in the plain";
+    const myarr44 = text44.match(/ain/gi);
+    document.getElementById("p4.4").innerHTML = myarr44.length + " " + myarr44;
+</script>
+
+<!--
+Note
+If a regular expression does not include the g modifier (global search), match() will return only the first match in the string.
+-->
+
+<hr>
+
+<h2>JavaScript String matchAll()</h2>
+<p>The matchAll() method returns an iterator containing the results of matching a string against a string (or a regular expression).</p>
+<p id="p5"></p>
+
+<script>
+    let text5 = "I love cats. Cats are very easy to love. Cats are very popular.";
+    const iterator = text5.matchAll("Cats");        // matchALL() helps to find all the Cats in the sentance a regular match() will only find 1
+    document.getElementById("p5").innerHTML = Array.from(iterator);
+</script>
+
+<p>Test case 2:-</p>
+<p>If the parameter is a regular expression, the global flag (g) must be set, otherwise a TypeError is thrown.</p>
+<p id="p5.2"></p>
+
+<script>
+    let text51 = "I love cats. Cats are very easy to love. Cats are very popular.";
+    const iterator51 = text51.matchAll(/Cats/g);
+    document.getElementById("p5.2").innerHTML = Array.from(iterator51); 
+</script>
+
+<p>Test case 3:-</p>
+<p>If you want to search case insensitive, the insensitive flag (i) must be set:</p>
+<p id="p5.3"></p>
+
+<script>
+    let text52 = "I love cats. Cats are very easy to love. Cats are very popular.";
+    const iterator52 = text52.matchAll(/Cats/gi);
+    document.getElementById("p5.3").innerHTML = Array.from(iterator52);
+</script>
+
+<hr>
+
+<h2>JavaScript String includes()</h2>
+<p>
+The includes() method returns true if a string contains a specified value.
+Otherwise it returns false.
+</p>
+
+<p>Test Case 1:Check if a string includes "world":</p>
+<p id="p6"></p>
+
+<script>
+    let text6 = "Hello world, welcome to the universe.";
+    document.getElementById("p6").innerHTML = text6.includes("world");
+</script>
+
+<p>Test case 2:Check if a string includes "world". Start at position 12:</p>
+<p id="p6.2"></p>
+
+<script>
+    let text62 = "Hello world, welcome to the universe.";
+    document.getElementById("p6.2").innerHTML = text62.includes("world",12);
+</script>
+
+<!--
+Note: includes() is case sensitive.
+-->
+
+<hr>
+
+<h2>JavaScript String startsWith()</h2>
+<p>The startsWith() method returns true if a string begins with a specified value.
+Otherwise it returns false:
+</p>
+
+<p>Test case 1:Returns true:</p>
+<p id="p7"></p>
+
+<script>
+    let text7 = "Hello world, welcome to the universe.";
+    document.getElementById("p7").innerHTML = text7.startsWith("Hello");
+</script>
+
+<p>Test case 2:Returns false:</p>
+<p id="p7.2"></p>
+
+<script>
+    let text72 = "Hello world, welcome to the universe.";
+    document.getElementById("p7.2").innerHTML = text72.startsWith("world")
+</script>
+
+<p>A start position for the search can be specified:</p>
+
+<p>Test case 3:Returns false:</p>
+<p id="p7.3"></p>
+
+<script>
+    let text73 = "Hello world, welcome to the universe.";
+    document.getElementById("p7.3").innerHTML = text73.startsWith("world",5);
+</script>
+
+<p>Test case 4:Returns true:</p>
+<p id="p7.4"></p>
+
+<script>
+    let text74 = "Hello world, welcome to the universe.";
+    document.getElementById("p7.4").innerHTML = text74.startsWith("world",6);
+</script>
+
+<!--
+Note:startsWith() is case sensitive.
+-->
+
+<hr>
+
+<h2>JavaScript String endsWith()</h2>
+<p>
+The endsWith() method returns true if a string ends with a specified value.
+Otherwise it returns false:
+</p>
+
+<p>Test case 1:Check if a string ends with "Doe":</p>
+<p id="p8"></p>
+<script>
+    let text8 = "Jack Jones";
+    document.getElementById("p8").innerHTML = text8.endsWith("Jones");
+</script>
+
+<p>Test case 2:Check if the 11 first characters of a string ends with "world":</p>
+<p id="p8.2"></p>
+<script>
+    let text81 = "Hello world, welcome to the universe.";
+    document.getElementById("p8.2").innerHTML = text81.endsWith("world",11);
+</script>
+
+
+</body>
+</html>

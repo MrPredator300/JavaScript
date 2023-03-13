@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<title>JS Strings</title>
+<head><p align="Center"><b>JS Strings</b></p></head>
+<body>
+
+<p id="p1"></p>
+<script>
+    let text1 = "John Doe";
+    document.getElementById("p1").innerHTML = text1;
+</script>
+
+<hr>
+
+<p><b>Note:</b>You can use single or double quotes:</p>
+<p id="p2"></p>
+<p id="p2.2"?></p>
+<script>
+    let carName1 = "Volo";
+    let carName2 = 'BMW';
+    document.getElementById("p2").innerHTML = carName1;
+    document.getElementById("p2.2").innerHTML = carName2;
+</script>
+
+<hr>
+
+<p><b>Note:</b>You can use quotes inside a string, as long as they don't match the quotes surrounding the string:</p>
+<p id="p3"></p>
+<p id="p3.2"></p>
+<p id="p3.3"></p>
+
+<script>
+    let ans1="Hello there";
+    let ans2 = "He is called 'Jack'";
+    let ans3 = 'He has a brother called "Jill"';
+    document.getElementById("p3").innerHTML = ans1;
+    document.getElementById("p3.2").innerHTML = ans2;
+    document.getElementById("p3.3").innerHTML = ans3;
+</script>
+
+<hr>
+
+<h2>String Lenght:-</h2>
+<p>The length of the string is:-</p>
+<p>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+<p id="p4"></p>
+
+
+<script>
+    let text2 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    document.getElementById("p4").innerHTML = text2.length;
+</script>
+
+<hr>
+
+<h2>Escape Character:- (\)</h2>
+<!--
+The string will be chopped to "We are the so-called ".
+The solution to avoid this problem, is to use the backslash escape character.
+The backslash (\) escape character turns special characters into string characters:
+-->
+
+<b><p>The sequence \"  inserts a double quote in a string:</p></b>
+<p id="p5"></p>
+
+<script>
+    let text3 = "We are the so-called \"Vikings\" from the north.";
+    document.getElementById("p5").innerHTML = text3;
+</script>
+
+<b><p>The sequence \'  inserts a single quote in a string:</p></b>
+<p id="p5.2"></p>
+
+<script>
+    let text4 = 'It\'s alright.';
+    document.getElementById("p5.2").innerHTML = text4;
+</script>
+
+<b>The sequence \\  inserts a backslash in a string:</b>
+<p id="p5.3"></p>
+
+<script>
+    let text5 = "The character \\ is called backlash.";
+    document.getElementById("p5.3").innerHTML = text5;
+</script>
+
+<hr>
+
+<h2>Breaking Long Code Lines:-</h2>
+
+<p id="p6"></p>
+
+<script>
+    document.getElementById("p6").innerHTML = "Hello Jack";
+</script>
+
+<p id="p6.1"></p>
+
+<script>
+    document.getElementById("p6.1").innerHTML = "Hello \ Jack!";
+</script>
+
+<!--
+The \ method is not the preferred method. It might not have universal support.
+Some browsers do not allow spaces behind the \ character.
+-->
+
+<b><p>A safer way to break up a string, is to use string addition:</p></b>
+<p id="p6.2"></p>
+
+
+<script>
+    document.getElementById("p6.2").innerHTML = "Hello " + "Jack";
+</script>
+
+<b><p>You cannot break up a code line with a backslash: (error in code as an example)</p></b>
+
+<script>
+    document.getElementById("p6.3").innerHTML = \ "Hello Jack!";    //Error in the code it will display used as an example
+</script>
+
+<hr>
+
+<h2>JavaScript Strings as Objects</h2>
+<p id="p7"></p>
+<script>
+    let x="Jack";
+    let y = new String("Jack");
+    document.getElementById("p7").innerHTML = typeof x + "<br>" + typeof y;
+</script>
+
+<h3>Never Create String as Objects:-</h3>
+<p>When using the == operator, x and y are equal:</p>
+<p id="p8"></p>
+<script>
+    let x1 = "Jack";
+    let y1 = new String("Jack");
+    document.getElementById("p8").innerHTML = (x1==y1); //boolean result will be displayed!! (true)
+</script>
+
+<p id="8.1"></p>
+<p>When using the === operator, x and y are not equal:</p>
+<script>
+    let x2 = "Jack";
+    let y2 = new String("Jack");
+    document.getElementById("p8.1").innerHTML = (x2===y2); //boolean result will be displayed (false)
+</script>
+
+
+</body>
+</html>

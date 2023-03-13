@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<title>JavaScript in 'head' tag</title>
+<head><p align="Center"><b>JavaScript in 'head' tag</b></p></head>
+<head>
+<script>
+function myFunction() {
+ document.getElementById("demo").innerHTML = "Paragraph Changed.";
+}
+</script>
+</head>
+<body>
+
+<h2>Demo JavaScript in Head</h2>
+
+<p id="demo">A paragraph.</p>
+<button type="button" onclick="myFunction()">Try it </button>
+
+<!--
+JavaScript in <head>
+In this example, a JavaScript function is placed in the <head> section of an HTML page.
+
+The function is invoked (called) when a button is clicked:
+
+NOTE: Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display.
+-->
+
+</body>
+</html>

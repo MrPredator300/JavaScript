@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<title>JS Const (Hoisting)</title>
+<head><p align="Center"><b>JS Const (Hoisting)</b></p></head>
+<body>
+
+    <p>With <b>var</b>, you can use a variable before it is declared:</p>
+
+    <p id="d1"></p>
+    <script>
+        carName = "Volvo";
+        var carName;
+        document.getElementById("d1").innerHTML = carName;
+    </script>
+
+<!--
+Hoisting
+Variables defined with var are hoisted to the top and can be initialized at any time.
+
+Meaning: You can use the variable before it is declared:
+
+Variables defined with const are also hoisted to the top, but not initialized.
+
+Meaning: Using a const variable before it is declared will result in a ReferenceError:
+alert (carName);
+const carName = "Volvo";
+-->
+
+</body>
+</html>

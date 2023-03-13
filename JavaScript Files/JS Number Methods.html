@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<title>JS Number Methods</title>
+<head><p align="Center"><b>JS Number Methods</b></p></head>
+<body>
+
+<!--
+JavaScript Number Methods
+These number methods can be used on all JavaScript numbers:
+
+Method	Description
+toString()	Returns a number as a string
+toExponential()	Returns a number written in exponential notation
+toFixed()	Returns a number written with a number of decimals
+toPrecision()	Returns a number written with a specified length
+ValueOf()	Returns a number as a number
+-->
+
+<h2>The toString() Method</h2>
+<p>The toString() method returns a number as a string. <br>
+All number methods can be used on any type of numbers (literals, variables, or expressions):</p>
+<p id="p1"></p>
+
+<script>
+    let x = 123;
+    document.getElementById("p1").innerHTML = x.toString() + "<br>" + (123).toString() + "<br>" + (100 + 23).toString();
+</script>
+
+<hr>
+
+<h2>The toExponential() Method</h2>
+<p>toExponential() returns a string, with a number rounded and written using exponential notation. <br>
+A parameter defines the number of characters behind the decimal point:</p>
+<p id="p2"></p>
+
+<script>
+    let x2 = 9.656;
+    document.getElementById("p2").innerHTML = x2.toExponential(2) + "<br>" + x2.toExponential(4) + "<br>" + x2.toExponential(6);
+</script>
+
+<hr>
+
+<h2>The toFixed() Method</h2>
+<p>toFixed() returns a string, with the number written with a specified number of decimals:</p>
+<p id="p3"></p>
+
+<script>
+    let x3 = 9.656;
+    document.getElementById("p3").innerHTML = x3.toFixed(0) + "<br>" + x3.toFixed(2) + "<br>" + x3.toFixed(4) + "<br>" + x3.toFixed(6);
+</script>
+
+<!--
+Note:toFixed(2) is perfect for working with money.
+-->
+
+<hr>
+
+<h2>The toPrecision() Method</h2>
+<p>toPrecision() returns a string, with a number written with a specified length:</p>
+<p id="p4"></p>
+
+<script>
+    let x4 = 9.656;
+    document.getElementById("p4").innerHTML = x4.toPrecision() + "<br>" + x4.toPrecision(2) + "<br>" + x4.toPrecision(4) + "<br>" + x4.toPrecision(6);
+</script>
+
+<hr>
+
+<h2>The valueOf() Method</h2>
+<p>valueOf() returns a number as a number.</p>
+<p id="p5"></p>
+
+<script>
+    let x5 = 123;
+    document.getElementById("p5").innerHTML = x5.valueOf() + "<br>" + (123).valueOf() + "<br>" + (100 + 23).valueOf();
+</script>
+
+<!--
+In JavaScript, a number can be a primitive value (typeof = number) or an object (typeof = object).
+The valueOf() method is used internally in JavaScript to convert Number objects to primitive values.
+There is no reason to use it in your code.
+All JavaScript data types have a valueOf() and a toString() method.
+-->
+
+<!--
+Converting Variables to Numbers
+There are 3 JavaScript methods that can be used to convert a variable to a number:
+Method	Description
+Number()	Returns a number converted from its argument.
+parseFloat()	Parses its argument and returns a floating point number
+parseInt()	Parses its argument and returns a whole number
+The methods above are not number methods. They are global JavaScript methods.
+-->
+
+<hr>
+
+<h2>The Number() Method</h2>
+<p>The Number() method can be used to convert JavaScript variables to numbers:</p>
+<p id="p6"></p>
+
+<script>
+    document.getElementById("p6").innerHTML = Number(true) + "<br>" + Number(false) + "<br>" + Number("10") + "<br>" + 
+    Number("  10") + "<br>" + Number("10  ") + "<br>" + Number(" 10  ") + "<br>" + Number("10.33") + "<br>" + Number("10,33")
+    + "<br>" + Number("10 33") + "<br>" + Number("John");
+</script>
+
+<!--
+Note:If the number cannot be converted, NaN (Not a Number) is returned.
+-->
+
+<hr>
+
+<h2>The Number() Method Used on Dates</h2>
+<p>Number() can also convert a date to a number.</p>
+<p id="p7"></p>
+<p id="p7.2"></p>
+
+<script>
+    let x7 = new Date("1970-01-01");
+    document.getElementById("p7").innerHTML = Number(x7);
+    document.getElementById("p7.2").innerHTML = x7; 
+</script>
+
+<!--
+NOTE:The Date() method returns the number of milliseconds since 1.1.1970.
+-->
+<p>The number of milliseconds between 1970-01-02 and 1970-01-01 is 86400000:</p>
+<p id="p7.3"></p>
+
+<script>
+    let x72 = new Date("1970-01-02");
+    document.getElementById("p7.3").innerHTML = Number(x72);
+</script>
+
+<hr>
+
+<h2>The parseInt() Method</h2>
+<p>parseInt() parses a string and returns a whole number. Spaces are allowed. Only the first number is returned:</p>
+
+<p id="p7.4"></p>
+
+<script>
+    document.getElementById("p7.4").innerHTML = parseInt("-10") + "<br>" + parseInt("-10.33") + "<br>" + parseInt("10") + "<br>" + parseInt("10.33") + "<br>" + parseInt("10 20 30") + "<br>" + parseInt("10 years") + "<br>" + parseInt("years 10");
+</script>
+
+<p>If the number cannot be converted, NaN (Not a Number) is returned.</p>
+
+<hr>
+
+<h2>The parseFloat() Method</h2>
+<p>parseFloat() parses a string and returns a number. Spaces are allowed. Only the first number is returned:</p>
+<p id="p7.5"></p>
+
+<script>
+    document.getElementById("p7.5").innerHTML = parseFloat("10") + "<br>" + parseFloat("10.33") + "<br>" + parseFloat("10 20 30") + "<br>" + parseFloat("10 years") + "<br>" + parseFloat("years 10");
+</script>
+<p>If the number cannot be converted, NaN (Not a Number) is returned.</p>
+
+<hr>
+
+<h2>The Number.isInteger() Method</h2>
+<p>The Number.isInteger() method returns true if the argument is an integer.</p>
+<p id="p7.6"></p>
+
+<script>
+    document.getElementById("p7.6").innerHTML = "Is 10 an Integer? " + Number.isInteger(10) + "<br>" + "Is 10.5 an Integer? "  + Number.isInteger(10.5);
+</script>
+
+<hr>
+
+<h2>The Number.isSafeInteger() Method</h2>
+<p>A safe integer is an integer that can be exactly represented as a double precision number. <br>
+The Number.isSafeInteger() method returns true if the argument is a safe integer.</p>
+
+<p id="p7.7"></p>
+
+<script>
+    document.getElementById("p7.7").innerHTML = "Is Number 10 a safe Integer? " + Number.isSafeInteger(10) + "<br>" + "Is number 12345678901234567890 a Safe Integer? "  + Number.isSafeInteger(12345678901234567890);
+</script>
+
+<!--
+Note:-
+Safe integers are all integers from -(2^53 - 1) to +(2^53 - 1).
+This is safe: 9007199254740991. This is not safe: 9007199254740992.
+-->
+
+<hr>
+
+<h2>The Number.parseFloat() Method</h2>
+<p>Number.parseFloat() parses a string and returns a number. <br>
+Spaces are allowed. Only the first number is returned:</p>
+
+<p id="p7.8"></p>
+
+<script>
+    document.getElementById("p7.8").innerHTML = Number.parseFloat("10") + "<br>" + Number.parseFloat("10.23") + "<br>" + Number.parseFloat("10 20 30") + "<br>" + Number.parseFloat("10 years") + "<br>" + Number.parseFloat("years 10");
+</script>
+
+<!--
+Note:-
+The Number methods Number.parseInt() and Number.parseFloat()
+are the same as the
+Global methods parseInt() and parseFloat().
+The purpose is modularization of globals (to make it easier to use the same JavaScript code outside the browser).
+-->
+
+<hr>
+
+<h2>The Number.parseInt() Method</h2>
+<p>Number.parseInt() parses a string and returns a whole number. <br>
+Spaces are allowed. Only the first number is returned:
+</p>
+
+<p id="p7.9"></p>
+
+<script>
+    document.getElementById("p7.9").innerHTML = Number.parseInt("-10") + "<br>" + Number.parseInt("-10.33") + "<br>" + Number.parseInt("10") + "<br>" + 
+    Number.parseInt("10.33") + "<br>" + Number.parseInt("10 20 30") + "<br>" + Number.parseInt("10 years") + "<br>" + Number.parseInt("years 10");
+</script>
+
+</body>
+</html>

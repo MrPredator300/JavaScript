@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<title>JS Array Iteration</title>
+<head><p align="Center"><b>JS Array Iteration</b></p></head>
+<body>
+
+<h2>JavaScript Array forEach()</h2>
+<p>The forEach() method calls a function (a callback function) once for each array element.</p>
+<p id="p1"></p>
+<p id="p1.2"></p>
+
+<script>
+    const numbers1 = [45, 4, 9, 16, 25];
+    document.getElementById("p1").innerHTML = numbers1;
+    
+    let txt = "";
+    numbers1.forEach(myFunction1);
+    document.getElementById("p1.2").innerHTML = txt;
+
+    function myFunction1(value,index,array) {
+        txt += value + "<br>";
+    }
+</script>
+
+<!--
+Note that the function takes 3 arguments:
+The item value
+The item index
+The array itself
+
+The example above uses only the value parameter. The example can be rewritten to:
+-->
+<p>The example above uses only the value parameter. The example can be rewritten to:</p>
+<p id="p1.3"></p>
+<p id="p1.3.2"></p>
+
+<script>
+    const numbers13 = [45, 4, 9, 16, 25];
+    document.getElementById("p1.3").innerHTML = numbers13 + "  (Just displaying the array!)";
+
+    let txt13 = "";
+    numbers13.forEach(myFunction13);
+    document.getElementById("p1.3.2").innerHTML = txt13;
+
+    function myFunction13(value2) {
+        txt13 += value2 + "<br>";
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array map()</h2>
+<!--
+The map() method creates a new array by performing a function on each array element.
+The map() method does not execute the function for array elements without values.
+The map() method does not change the original array.
+
+This example multiplies each array value by 2:
+-->
+<p>Creates a new array by performing a function on each array element.</p>
+<p id="p2"></p>
+
+<script>
+    const numbers14 =  [45, 4, 9, 16, 25];
+    const numbers142 = numbers14.map(myFunction14);
+    document.getElementById("p2").innerHTML = numbers142;
+
+    function myFunction14(value,index,array) {
+        return value*2;
+    }
+</script>
+
+<p>Test Case 2:When a callback function uses only the value parameter, the index and array parameters can be omitted:</p>
+<p id="p2.2"></p>
+<p id="p2.3"></p>
+
+<script>
+    const number145 = [45, 4, 9, 16, 25];
+    const number1451 = number145.map(myFunction142);
+    document.getElementById("p2.2").innerHTML = number145;
+    
+    document.getElementById("p2.3").innerHTML = number1451;
+    function myFunction142(value14) {
+        return value14 * 2;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array filter()</h2>
+<p>The filter() method creates a new array with array elements that pass a test.</p>
+<p id="p3"></p>
+<p id="p3.2"></p>
+
+<script>
+    const number3 = [45, 4, 9, 16, 25];
+    const over18 = number3.filter(myFunction3);
+    document.getElementById("p3").innerHTML = number3;  
+
+    document.getElementById("p3.2").innerHTML = over18;
+    function myFunction3(value,index,array) {
+        return value > 18;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array reduce()</h2>
+<!--
+The reduce() method runs a function on each array element to produce (reduce it to) a single value.
+The reduce() method works from left-to-right in the array. See also reduceRight().
+The reduce() method does not reduce the original array.
+-->
+<p>This example finds the sum of all numbers in an array:</p>
+<p id="p4"></p>
+<p id="p4.2"></p>
+
+<script>
+    const number4 = [45, 4, 9, 16, 25];
+    let sum = number4.reduce(myFunction4);
+    document.getElementById("p4").innerHTML = number4;
+
+    document.getElementById("p4.2").innerHTML = "The sum is " + sum;
+    function myFunction4(total,value,index,array) {
+        return total + value;
+    }
+</script>
+
+<!--
+Note that the function takes 4 arguments:
+The total (the initial value / previously returned value)
+The item value
+The item index
+The array itself
+-->
+
+<p id="p4.3"></p>
+<p id="p4.3.2"></p>
+<script>
+    const number43 = [45, 4, 9, 16, 25];
+    let sum43 = number43.reduce(myFunction43);
+
+    document.getElementById("p4.3").innerHTML = number43;
+
+    document.getElementById("p4.3.2").innerHTML = "The sum for 2nd test case: " + sum43;
+    function myFunction43(total,value) {
+        return total + value;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array reduceRight()</h2>
+<!--
+The reduceRight() method runs a function on each array element to produce (reduce it to) a single value.
+The reduceRight() works from right-to-left in the array. See also reduce().
+The reduceRight() method does not reduce the original array.
+-->
+<p>This example finds the sum of all numbers in an array:</p>
+<p id="p5"></p>
+<p id="p5.2"></p>
+
+<script>
+    const number5 = [45, 4, 9, 16, 25];
+    let sum5 = number5.reduceRight(myFunction5);
+    document.getElementById("p5").innerHTML = number5;
+
+    document.getElementById("p5.2").innerHTML = "The sum is " + sum5;
+
+    function myFunction5(total, value, index, array) {
+    return total + value;
+    }
+</script>
+
+<!--
+Note that the function takes 4 arguments:
+
+The total (the initial value / previously returned value)
+The item value
+The item index
+The array itself
+-->
+
+<p>This example finds the sum of all numbers in an array:</p>
+<p id="p5.3"></p>
+<p id="p5.3.2"></p>
+
+<script>
+    const numbers53 = [45, 4, 9, 16, 25];
+    let sum53 = numbers53.reduceRight(myFunction53);
+    document.getElementById("p5.3").innerHTML = numbers53;
+
+    document.getElementById("p5.3.2").innerHTML = "The sum is " + sum53;
+
+    function myFunction53(total,value) {
+        return total + value;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array every()</h2>
+<!--
+The every() method checks if all array values pass a test.
+This example checks if all array values are larger than 18:
+-->
+<p id="p6"></p>
+<p id="p6.2"></p>
+
+<script>
+    const number6 = [45, 4, 9, 16, 25];
+    let allOver18 = number6.every(myFunction6);
+    document.getElementById("p6").innerHTML = number6;
+
+    document.getElementById("p6.2").innerHTML = "All Over 18 is " + allOver18;
+    function myFunction6(value,index,array) {
+        return value > 18;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array some()</h2>
+<!--
+The some() method checks if some array values pass a test.
+This example checks if some array values are larger than 18:
+-->
+<p id="p7"></p>
+<p id="p7.2"></p>
+
+<script>
+    const numbers7 = [45, 4, 9, 16, 25];
+    let sumOver18 = numbers7.some(myFunction7);
+    document.getElementById("p7").innerHTML = numbers7;
+    
+    document.getElementById("p7.2").innerHTML = "Some over 18 is " + sumOver18;
+    function myFunction7(value,index,array) {
+        return value > 18;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array indexOf()</h2>
+<!--
+The indexOf() method searches an array for an element value and returns its position.
+Note: The first item has position 0, the second item has position 1, and so on.
+-->
+
+<p id="p8"></p>
+<p id="p8.2"></p>
+
+<script>
+    const fruits8 = ["Apple", "Orange", "Apple", "Mango"];
+    let position = fruits8.indexOf("Apple") + 1;
+    document.getElementById("p8").innerHTML = fruits8;
+    document.getElementById("p8.2").innerHTML = "Apple is found in position " + position;
+</script>
+
+<hr>
+
+<h2>JavaScript Array lastIndexOf()</h2>
+<!--
+Array.lastIndexOf() is the same as Array.indexOf(), but returns the position of the last occurrence of the specified element.
+-->
+
+<p id="p9"></p>
+<p id="p9.2"></p>
+
+<script>
+    const fruits9 = ["Apple", "Orange", "Apple", "Mango"];
+    let postion9 = fruits9.lastIndexOf("Apple") + 1;
+    document.getElementById("p9").innerHTML = fruits9;
+    document.getElementById("p9.2").innerHTML = "Apple is in positon " + postion9;
+</script>
+
+<hr>
+
+<h2>JavaScript Array find()</h2>
+<!--
+The find() method returns the value of the first array element that passes a test function.
+This example finds (returns the value of) the first element that is larger than 18:
+-->
+
+<p id="p10"></p>
+<p id="p10.2"></p>
+
+<script>
+    const number10 = [4, 9, 16, 25, 29];
+    document.getElementById("p10").innerHTML = number10;
+    let first10 = number10.find(myFunction10);
+
+    document.getElementById("p10.2").innerHTML = "First Number above 18 is " + first10;
+
+    function myFunction10(value,index,array) {
+        return value > 18;
+    }
+</script>
+
+<hr>
+
+<h2>JavaScript Array findIndex()</h2>
+
+
+
+
+</body>
+</html>

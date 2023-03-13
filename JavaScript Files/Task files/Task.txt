@@ -1,0 +1,8 @@
+Craete 5 buttons on the homepage using HTML and JS 
+The buttons should have numbers 1-5 so 5 buttons
+Click on the button and the number should be added to a variable 
+eg:-
+
+var=0
+var=0+1 = 1
+var=1+2 = 3...

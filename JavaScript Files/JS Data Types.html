@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<title>JS Data Types</title>
+<head><p align="Center"><b>JS Data Types</b></p></head>
+<body>
+
+<h2>The Concept of Data Types:-</h2>
+
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<p id="p4"></p>
+
+<script>
+    let x1= 16 + "Volvo";
+    document.getElementById("p1").innerHTML = x1;
+    let y1 = "Volvo" + 16;
+    document.getElementById("p2").innerHTML = y1;
+    let z1 =  16 + 4 + "Volvo";
+    document.getElementById("p3").innerHTML = z1;
+    let a1 = "Volvo" + 16 + 4;
+    document.getElementById("p4").innerHTML = a1;
+</script>
+
+
+<!--
+JavaScript has 8 Datatypes
+1. String
+2. Number
+3. Bigint
+4. Boolean
+5. Undefined
+6. Null
+7. Symbol
+8. Object
+
+The Object Datatype
+The object data type can contain:
+
+1. An object
+2. An array
+3. A date
+
+Note:A JavaScript variable can hold any type of data.
+-->
+
+<hr>
+
+<h2>JavaScript Types are Dynamic:-</h2>
+<p>JavaScript has dynamic types. <br>
+This means that the same variable can be used to hold different data types:</p>
+
+<p id="p5"></p>
+
+<script>
+    let x;
+    x = 5;
+    x = "Jhon";
+    document.getElementById("p5").innerHTML = x;
+</script>
+
+<hr>
+
+<h2>JavaScript Strings:-</h2>
+<p id="p6"></p>
+<p id="p6.1"></p>
+
+<script>
+    let carName1 = "Volvo";
+    let carName2 = "BMW";
+    document.getElementById("p6").innerHTML = carName1 + "<br>" + carName2;
+    let answer1 = "It's alright";
+    let answer2 = "He is called 'Johnny'";
+    let answer3 = 'He is called "Johnny"';
+
+    document.getElementById("p6.1").innerHTML = answer1 + "<br>" + answer2 + "<br>" + answer3;
+</script>
+
+<hr>
+
+<h2>JavaScript Numbers:-</h2>
+<p id="p7"></p>
+<p id="p7.1"></p>
+<p id="p7.2"></p>
+
+<script>
+    let x7 = 34.00;
+    let x71 = 34;
+    let x712 = 3.14; 
+    document.getElementById("p7").innerHTML = x7;
+    document.getElementById("p7.1").innerHTML = x71;
+    document.getElementById("p7.2").innerHTML = x712;
+</script>
+
+<hr>
+
+<h2>Exponential Notation:-</h2>
+<p id="p8"></p>
+
+<script>
+    let x8 = 123e5;
+    let y8 = 123e-5;
+    document.getElementById("p8").innerHTML = x8 + "<br>" + y8;
+</script>
+
+<!--
+Note
+Most programming languages have many number types:
+
+Whole numbers (integers):
+byte (8-bit), short (16-bit), int (32-bit), long (64-bit)
+
+Real numbers (floating-piont):
+float (32-bit), double (64-bit).
+
+Javascript are always one type:
+double (64-bit floating point).
+-->
+
+<hr>
+
+<h2>JavaScript BigInt:-</h2>
+<p id="p9"></p>
+<p id="p9.1"></p>
+<p id="p9.2"></p>
+<p id="p9.3"></p>
+
+<script>
+    let x9 = BigInt("123456789012345678901234567890");
+    let x91 = "123456789012345678901234567890";
+    let x92 = 123456789012345678901234567890;
+    let x93 = BigInt(123456789012345678901234567890);
+    document.getElementById("p9").innerHTML = x9;
+    document.getElementById("p9.1").innerHTML = x91;
+    document.getElementById("p9.2").innerHTML = x92;
+    document.getElementById("p9.3").innerHTML = x93;
+</script>
+
+<hr>
+
+<h2>JavaScript Booleans:-</h2>
+
+<p>Booleans can have two values: true or false:</p>
+
+<p id="p10"></p>
+
+<script>
+    let x10=5;
+    let y10=5;
+    let z10=6;
+    //(x==y)  Returns true
+    //(x==z)  Returns flase
+    document.getElementById("p10").innerHTML = (x10 == y10) + "<br>" + (x10 == z10);
+</script>
+
+<hr>
+
+<h2>JavaScript Arrays:-</h2>
+
+<p id="p11"></p>
+<p id="p11.1"></p>
+<p id="p11.2"></p>
+<p id="p11.3"></p>
+
+<script>
+    const cars = ["Volvo","BMW","Audi"];
+    document.getElementById("p11").innerHTML = cars;
+    document.getElementById("p11.1").innerHTML = cars[0];
+    document.getElementById("p11.2").innerHTML = cars[1];
+    document.getElementById("p11.3").innerHTML = cars[2];
+</script>
+
+<hr>
+
+<h2>JavaScript Objects:-</h2>
+
+<p id="p12"></p>
+
+<script>
+    const person = {firstname:"Percy",lastname:"Jackson",age:20};
+    document.getElementById("p12").innerHTML = person.firstname + ' ' + person.lastname + ' is ' + person.age + "years old.";
+</script>
+
+<hr>
+
+<h2>The typeof Operator:-</h2>
+<p id="p13"></p>
+
+<script>
+    document.getElementById("p13").innerHTML = 
+    typeof "" + "<br>" + 
+    typeof "Jhon" + "<br>" + 
+    typeof "Jhon Doe" + "<br>" +
+    typeof 0 + "<br>" +
+    typeof 321 + "<br>" +
+    typeof 3.14 + "<br>" +
+    typeof (3) + "<br>" +
+    typeof (3 + 4);
+</script>
+
+<hr>
+
+<h2>Undefined:-</h2>
+<p>The value (and the data type) of a variable with no value is <b>undefined</b>.</p>
+<p id="p14"></p>
+
+<p>Variables can be emptied if you set the value to <b>undefined</b>.</p>
+<p id="p14.1"></p>
+
+<script>
+    let car;
+    document.getElementById("p14").innerHTML = car + "<br>" + typeof car;
+</script>
+
+<script>
+    let car2 = "Volvo";
+    car2 = undefined;
+    document.getElementById("p14.1").innerHTML = car2 + "<br>" + typeof car2;
+</script>
+
+<hr>
+
+<h2>Empty Values:-</h2>
+<p id="p15"></p>
+
+<script>
+    let car3 = "";
+    document.getElementById("p15").innerHTML = "The value is: " + car3 + "<br>" + "The type is:" + typeof car3;
+</script>
+
+<!--
+Empty Values
+An empty value has nothing to do with undefined.
+An empty string has both a legal value and a type.
+
+-->
+
+</body>
+</html>
